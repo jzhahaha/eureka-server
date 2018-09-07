@@ -1,6 +1,10 @@
 spring:
   profiles:
     active: dev
+  application:
+    name: test2
+  jmx:
+    default-domain: test2
 
 server:
   port: 9876
@@ -8,10 +12,11 @@ server:
 eureka:
   instance:
     hostname: localhost
+    instance-id:  ${spring.application.name}:${spring.application.instance_id:${server.port}}
   client:
     register-with-eureka: false
     fetch-registry: false
-    service-url:
-      default-zone: http://${eureka.instance.hostname}:${server.port}}/eureka/
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}}/eureka/
 
 

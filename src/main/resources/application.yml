@@ -2,7 +2,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: test2
+    name: eureka-server
   jmx:
     default-domain: test2
 

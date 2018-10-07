@@ -6,9 +6,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthController {
 
-    @RequestMapping(value = {"", "/health"})
+    @RequestMapping("/health")
     public  String healthController(){
         return "health";
+    }
+
+    @RequestMapping(value = "/test")
+    public String eurekaTestController(){
+        return "eureka,test";
+    }
+
+    @RequestMapping(value = "/eurekaTest")
+    public String eurekaController(){
+        return "eureka";
     }
 
 }
